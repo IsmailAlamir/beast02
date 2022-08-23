@@ -31,3 +31,24 @@ Actual time needed to complete: 25 min
 
 Stretch Goal: Add Interaction
 I Don't know about it so much yet, but I add an button to make "favorited" like the image
+
+
+
+class 03 :pass function
+
+
+Number and name of feature: Feature #1: Display a Modal
+
+Estimate of time needed to complete: 1 hr
+
+Start time: 5:00
+
+Finish time: 10:00
+
+Actual time needed to complete: not done yet
+
+
+
+
+
+
