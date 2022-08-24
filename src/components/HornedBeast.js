@@ -2,7 +2,8 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
-import SelectedBeast from "./SelectedBeast";
+import Button from 'react-bootstrap/Button';
+
 
 class HornedBeast extends React.Component{
 
@@ -40,7 +41,9 @@ class HornedBeast extends React.Component{
           {this.props.description} 
           <p>number of Favorite :❤️{this.state.numOfFavorite}</p>
           </Card.Text>
-          <SelectedBeast/>
+          <Button variant="danger" 
+          onClick={()=>{this.props.myfunction(this.props.title)}}
+          >open</Button>
         </Card.Body>
       </Card>
 

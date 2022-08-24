@@ -6,19 +6,37 @@ import Footer from './components/Footer';
 import SelectedBeast from './components/SelectedBeast';
 
 
+
 class App extends React.Component {
 
 constructor(props){
   super(props);
   this.state={
             welcome:"...........",
-            data:data
+            show:false,
+            selected:{}
   }
+}
+myfunction =(title)=>{
+  const sel=data.find(beast=>beast.title === title );
+  this.setState({
+    show:true,
+    selected:sel
+
+
+  })
 }
 
 welcomeing=()=>{
   this.setState({
     welcome:"HELLO!"
+  })
+}
+
+handleClose=()=>{
+  this.setState({
+    show:false
+
   })
 }
 
@@ -28,8 +46,9 @@ welcomeing=()=>{
       <div style={{ width: "100%", textAlign: 'center', margin: "0", padding: "20px" }}>
         <Header />
         <h1>{this.state.welcome}</h1>
-        <Main data={data} update={this.welcomeing} />
+        <Main update={this.welcomeing} myfunction={this.myfunction} Data={data} />
         <Footer />
+        <SelectedBeast showModal={this.state.show} handleClose={this.handleClose} selected={this.state.selected}/>
       </div>)
   }
 

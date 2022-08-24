@@ -1,4 +1,4 @@
-const data=[
+[
 
 {
       "_id": 1,
@@ -160,8 +160,4 @@ const data=[
       "keyword": "dragon",
       "horns": 100
     }
-  ];
-
-
-
-  export default data
+  ]
