@@ -1,5 +1,5 @@
 import React from "react";
-import data from "./data";
+// import data from "./data";
 import HornedBeast from "./HornedBeast";
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
@@ -30,10 +30,17 @@ class Main extends React.Component {
 
 
       <>
-      <Button variant="light" onClick={this.welcomeing}>PRESS</Button>
+        <Button variant="light" onClick={this.welcomeing} >PRESS</Button>
 
         <Row xs={1} md={3} className="g-4">
-          {Beasts}
+        {this.props.Data.map((item) => (
+          <HornedBeast
+            img={item.image_url}
+            title={item.title}
+            dis={item.description}
+            myfunction={this.props.myfunction}
+          />
+        ))}
         </Row>
 
 
@@ -41,22 +48,6 @@ class Main extends React.Component {
     )
   }
 }
-
-
-
-
-
-
-
-//_________________________________________________________
-//_________________________________________________________
-let Beasts = data.map(item => {
-  return <HornedBeast
-    title={item.title}
-    img={item.image_url}
-    description={item.description}
-  />
-})
 
 
 export default Main;
