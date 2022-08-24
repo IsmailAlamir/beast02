@@ -1,9 +1,9 @@
 import React from 'react';
 import data from "./components/data";
-import Header from './components/Header';
-import Main from './components/Main';
-import Footer from './components/Footer';
-import SelectedBeast from './components/SelectedBeast';
+import Header from './src/components/Header';
+import Main from './src/components/Main';
+import Footer from './src/components/Footer';
+import SelectedBeast from './src/components/SelectedBeast';
 
 
 
