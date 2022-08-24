@@ -1,9 +1,8 @@
 import React from "react";
-// import data from "./data";
 import HornedBeast from "./HornedBeast";
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-import SelectedBeast from "./SelectedBeast";
+import UserForm from "./UserForm";
 
 
 
@@ -12,6 +11,8 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      beast:this.props.Data
+
     }
   }
 
@@ -22,6 +23,26 @@ class Main extends React.Component {
 
   }
 
+  numHorns=(num)=>{
+
+
+      let SelectedBeast=[];
+      if(num!==0){
+        SelectedBeast= this.state.beast.filter(item=>{
+              if(item.horns===parseInt(num)){
+                  return item;
+              }
+          })
+      }else{
+        SelectedBeast= this.state.beast; 
+      }
+      this.setState({
+        beast:SelectedBeast
+      })
+  }
+    
+
+
 
 
   render() {
@@ -30,17 +51,26 @@ class Main extends React.Component {
 
 
       <>
+              <UserForm Horns={this.numHorns}/>
+
         <Button variant="light" onClick={this.welcomeing} >PRESS</Button>
 
         <Row xs={1} md={3} className="g-4">
-        {this.props.Data.map((item) => (
+        {
+        this.state.beast.map((item) => (
           <HornedBeast
             img={item.image_url}
             title={item.title}
             dis={item.description}
+            horns={item.horns}
             myfunction={this.props.myfunction}
           />
-        ))}
+
+        ))
+
+
+         }
+       
         </Row>
 
 

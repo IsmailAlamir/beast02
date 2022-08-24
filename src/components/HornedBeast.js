@@ -38,8 +38,10 @@ class HornedBeast extends React.Component{
         <Card.Body>
           <Card.Title>{this.props.title}</Card.Title>
           <Card.Text>
-          {this.props.description} 
           <p>number of Favorite :❤️{this.state.numOfFavorite}</p>
+          <p>{this.props.dis}</p>
+          <p>number of horns : {this.props.horns}</p>
+
           </Card.Text>
           <Button variant="danger" 
           onClick={()=>{this.props.myfunction(this.props.title)}}

@@ -14,7 +14,7 @@ constructor(props){
   this.state={
             welcome:"...........",
             show:false,
-            selected:{}
+            selected:{},
   }
 }
 myfunction =(title)=>{
