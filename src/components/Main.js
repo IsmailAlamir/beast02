@@ -37,9 +37,9 @@ class Main extends React.Component {
           return item.horns === num;
         case 3:
           return item.horns >= num ;
-        case 0: 
+        default: 
           return true;
-  
+        
       }
     })
  
