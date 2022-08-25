@@ -11,7 +11,8 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      beast:this.props.Data
+      beast: this.props.Data,
+      sel:this.props.Data
 
     }
   }
@@ -23,24 +24,30 @@ class Main extends React.Component {
 
   }
 
-  numHorns=(num)=>{
+  numHorns = (num) => {
 
 
-      let SelectedBeast=[];
-      if(num!==0){
-        SelectedBeast= this.state.beast.filter(item=>{
-              if(item.horns===parseInt(num)){
-                  return item;
-              }
-          })
-      }else{
-        SelectedBeast= this.state.beast; 
+    let SelectedBeast = [];
+
+    SelectedBeast = this.state.beast.filter((item) => {
+      switch (num) {
+
+        case 1:
+        case 2:
+          return item.horns === num;
+        case 3:
+          return item.horns >= num ;
+        case 0: 
+          return true;
+  
       }
-      this.setState({
-        beast:SelectedBeast
-      })
+    })
+ 
+    this.setState({
+      sel: SelectedBeast
+    })
   }
-    
+
 
 
 
@@ -51,26 +58,26 @@ class Main extends React.Component {
 
 
       <>
-              <UserForm Horns={this.numHorns}/>
+        <UserForm Horns={this.numHorns} />
 
         <Button variant="light" onClick={this.welcomeing} >PRESS</Button>
 
         <Row xs={1} md={3} className="g-4">
-        {
-        this.state.beast.map((item) => (
-          <HornedBeast
-            img={item.image_url}
-            title={item.title}
-            dis={item.description}
-            horns={item.horns}
-            myfunction={this.props.myfunction}
-          />
+          {
+            this.state.sel.map((item) => (
+              <HornedBeast
+                img={item.image_url}
+                title={item.title}
+                dis={item.description}
+                horns={item.horns}
+                myfunction={this.props.myfunction}
+              />
 
-        ))
+            ))
 
 
-         }
-       
+          }
+
         </Row>
 
 

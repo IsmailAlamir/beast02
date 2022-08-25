@@ -6,7 +6,8 @@ class UserForm extends React.Component {
 
     numberOfHorns = (e) => {
         e.preventDefault();
-        let num = e.target.value;
+        let num = parseInt (e.target.value);
+        
         this.props.Horns(num);
     };
 
