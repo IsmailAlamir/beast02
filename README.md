@@ -1,4 +1,6 @@
-Number and name of feature: Feature #1: Display images
+https://merry-cocada-f238c9.netlify.app/
+
+# Number and name of feature: Feature #1: Display images
 
 Estimate of time needed to complete: 30 min
 
@@ -9,7 +11,7 @@ Finish time: 7:30
 Actual time needed to complete: 2:15 
 
 
-Number and name of feature: Feature #2: Allow users to vote for their favorite beast
+# Number and name of feature: Feature #2: Allow users to vote for their favorite beast
 
 Estimate of time needed to complete: 30 min
 
@@ -19,7 +21,7 @@ Finish time: 7:50
 
 Actual time needed to complete: 20 min
 
-Number and name of feature: Feature 3: Bootstrap
+# Number and name of feature: Feature 3: Bootstrap
 
 Estimate of time needed to complete: 30 min
 
